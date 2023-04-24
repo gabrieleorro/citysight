@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@font-face {
+  font-family: 'NeueHaasDisplay';
+  src: url('./assets/fonts/NeueHaasDisplayBold.ttf') format('truetype');
+}
+
+// h2, h3 {
+//   font-family: 'NeueHaasDisplay';
+// }
+
+h3 {
+  font-size: 20px;
+}

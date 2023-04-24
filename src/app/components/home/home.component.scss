@@ -1,0 +1,41 @@
+.generale {
+  padding: 0% 9% 0% 9%;
+
+  .utile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("https://w.wallhaven.cc/full/jx/wallhaven-jx3mmm.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    height: 400px;
+
+    .testo {
+      margin-left: 2%;
+      width: 280px;
+      color: white;
+    }
+  }
+}
+.populars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.card {
+  flex-direction: row;
+  align-items: center;
+  width: 30rem!important;
+}
+.card img {
+  width: 30%;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: calc(0.25rem - 1px);
+}
+.card-title {
+  font-weight: bold;
+}
