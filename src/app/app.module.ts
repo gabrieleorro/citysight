@@ -10,6 +10,12 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PagesComponent } from './components/pages/pages.component';
+import { AccountComponent } from './components/account/account.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { ProfileComponent } from './components/account/profile/profile.component';
+import { RegistrationComponent } from './components/account/registration/registration.component';
+import { UpdateUserComponent } from './components/account/update-user/update-user.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,13 +23,19 @@ import { PagesComponent } from './components/pages/pages.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PagesComponent
+    PagesComponent,
+    AccountComponent,
+    LoginComponent,
+    ProfileComponent,
+    RegistrationComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CardModule,
     ButtonModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
