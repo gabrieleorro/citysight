@@ -16,8 +16,8 @@ export class AuthService {
   ) { }
 
   // Metodo che permette il login
-  login(username: string, password: string): Observable<any> {
-    const user = { username: username, password: password };
+  login(usernameIn: string, passwordIn: string): Observable<any> {
+    const user = { username: usernameIn, password: passwordIn };
     return this.http.post<any>(`${this.apiBaseUrl}/login`, user);
   }
 
@@ -35,7 +35,7 @@ export class AuthService {
 
   // Controllo dei dati
   isLogged(): boolean {
-    return JSON.parse(localStorage.getItem('user') || '{}') != null;
+    return JSON.parse(localStorage.getItem('user')) != null;
   }
 
   // Metodo che ci permette il logout

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { MessageService } from 'primeng/api';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,18 +15,25 @@ export class LoginComponent {
   loggingError: string;
   user: any;
 
+  form = new FormGroup ({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
+
   constructor(
     private authService: AuthService,
     private router: Router,
     private messageService: MessageService,
   ) {}
 
-  onSubmit(credentials: any) {
-    if (credentials.username != '' && credentials.password != '') {
+  onSubmit() {
+    const credentials = this.form.value;
+    if (credentials.username !== '' && credentials.password !== '') {
       this.authService.login(credentials.username, credentials.password).subscribe({
         next: (res) => {
           this.user = res;
           if(res) {
+            this.messageService.add({severity: 'success', summary: 'Daje', detail: 'Hai fatto er login.', life: 5000});
             this.authService.saveStorage(res);
             this.router.navigate(['home']);
           } else {

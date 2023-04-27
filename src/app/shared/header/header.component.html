@@ -10,7 +10,7 @@
           <a class="nav-link" aria-current="page" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="account/login">Link</a>
+          <a class="nav-link" routerLink="/account/login">Account</a>
         </li>
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
@@ -30,11 +30,14 @@
             Account
           </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <a routerLink="account/login" ngbDropdownItem>Accedi</a>
-            <a ngbDropdownItem>Registrati</a>
-            <a ngbDropdownItem>Profilo</a>
+            <button class="nav-link" routerLink="/account/login" ngbDropdownItem>Accedi</button>
+            <a class="nav-link" ngbDropdownItem>Registrati</a>
+            <a class="nav-link" ngbDropdownItem>Profilo</a>
           </div>
         </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/account/login">ACCEDI</a>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
