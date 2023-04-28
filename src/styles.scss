@@ -15,5 +15,14 @@ h3 {
   font-size: 20px;
 }
 
+.bordino-dettagli {
+  border: none;
+  width: 100%;
+  color: transparent;
+  border-bottom: 3px solid #8b8b8b;
+  height: 1px;
+  margin: 8px 0;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

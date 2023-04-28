@@ -4,45 +4,42 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse ciao" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="home">Home</a>
+          <button class="nav-link" aria-current="page" routerLink="home">Home</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/account/login">Account</a>
-        </li>
-        <div ngbDropdown class="d-inline-block">
-          <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-            Gestionale
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <a ngbDropdownItem>Inserisci città</a>
-            <a ngbDropdownItem>Inserisci attrazione</a>
-            <a ngbDropdownItem>Something else is here</a>
-          </div>
-        </div>
-        <li class="nav-item">
-          <a class="nav-link">Disabled</a>
-        </li>
-        <div ngbDropdown class="d-inline-block">
-          <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-            Account
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button class="nav-link" routerLink="/account/login" ngbDropdownItem>Accedi</button>
-            <a class="nav-link" ngbDropdownItem>Registrati</a>
-            <a class="nav-link" ngbDropdownItem>Profilo</a>
-          </div>
-        </div>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/account/login">ACCEDI</a>
+          <button class="nav-link" routerLink="/cities">Destinazioni</button>
         </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Cerca</button>
       </form>
     </div>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div ngbDropdown class="d-inline-block" *ngIf="authService.isLogged() && user.role === 'admin'">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          Gestionale
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <a ngbDropdownItem>Inserisci città</a>
+          <a ngbDropdownItem>Inserisci attrazione</a>
+          <a ngbDropdownItem>Something else is here</a>
+        </div>
+      </div>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          Account
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="nav-link" routerLink="/account/login" ngbDropdownItem>Accedi</button>
+          <a class="nav-link" ngbDropdownItem>Registrati</a>
+          <a class="nav-link" ngbDropdownItem *ngIf="authService.isLogged()">Profilo</a>
+          <a class="nav-link" *ngIf="authService.isLogged()" (click)="logout()">Esci</a>
+        </div>
+      </div>
+    </ul>
   </div>
 </nav>

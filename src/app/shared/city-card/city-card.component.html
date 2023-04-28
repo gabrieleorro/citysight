@@ -1,0 +1,18 @@
+<p>city works</p>
+<div class="container-cards">
+  <div class="container-pagination">
+    <div class="frase-paginator">
+      <strong>{{cittaPerPagina}}</strong> citta su un totale di <strong>{{cittaTotali}}</strong> citta | pagina corrente: <strong>{{page}}</strong>
+    </div>
+    <p-paginator (onPageChange)="paginate($event)" [rows]="cittaPerPagina" [totalRecords]="cittaTotali" (rowsPerPageOptionsChange)="cittaPerPagina"></p-paginator>
+  </div>
+  <div class="card-container" *ngFor="let ci of citta | slice: (page * cittaPerPagina) - cittaPerPagina : page * cittaPerPagina">
+    <div class="card">
+      <img src="{{ci.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ci.name}}</h5>
+        <p class="card-text">{{ci.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

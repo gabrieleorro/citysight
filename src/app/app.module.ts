@@ -25,6 +25,10 @@ import { HomeComponent } from './components/home/home.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { SignupComponent } from './components/user/signup/signup.component';
+import { CitiesComponent } from './components/cities/cities.component';
+import { CityCardComponent } from './shared/city-card/city-card.component';
+import { CitiesListComponent } from './components/cities/cities-list/cities-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { LoginComponent } from './components/user/login/login.component';
     HomeComponent,
     PagesComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    CitiesComponent,
+    CityCardComponent,
+    CitiesListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="form-container">
     <p class="title">Login</p>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="credenziali" (ngSubmit)="onSubmit()">
       <div class="input-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" name="username" formControlName="username"/>
@@ -17,7 +17,7 @@
     </form>
     <div class="social-message">
       <div class="line"></div>
-      <p class="message">Accedi con un accout social</p>
+      <p class="message">Accedi con un account social</p>
       <div class="line"></div>
     </div>
     <div class="social-icons">
@@ -38,7 +38,7 @@
       </button>
     </div>
     <p class="signup">Non hai un account?
-      <a rel="noopener noreferrer" routerLink="/account/registrazione" class="">Registrati</a>
+      <a rel="noopener noreferrer" routerLink="/account/signup" class="">Registrati</a>
     </p>
   </div>
 </div>

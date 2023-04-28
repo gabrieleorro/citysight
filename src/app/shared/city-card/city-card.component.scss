@@ -1,0 +1,27 @@
+.container-pagination {
+
+  .frase-paginator {
+    font-size: 15px;
+  }
+}
+
+.card-container {
+  display: block;
+  width: 23%;
+  margin-left: 1.6%;
+  margin-bottom: 20px;
+
+  .card {
+    flex-direction: row;
+    align-items: center;
+    width: 30rem!important;
+  }
+  .card img {
+    width: 30%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+  .card-title {
+    font-weight: bold;
+  }
+}

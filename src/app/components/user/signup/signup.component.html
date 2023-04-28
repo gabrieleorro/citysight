@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="form-container">
+    <p class="title">Registrazione</p>
+    <form [formGroup]="utente" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" name="name" formControlName="name"/>
+      </div>
+      <div class="input-group">
+        <label for="surname">Cognome</label>
+        <input type="text" class="form-control" name="surname" formControlName="surname"/>
+      </div>
+      <div class="input-group">
+        <label for="birthDate">Data di nascita</label>
+        <input type="date" class="form-control" name="birthDate" formControlName="birthDate"/>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" formControlName="email"/>
+      </div>
+      <div class="input-group">
+        <label for="cellPhone">Cellulare</label>
+        <input type="text" class="form-control" name="cellPhone" formControlName="cellPhone"/>
+      </div>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" formControlName="username"/>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <p-password [toggleMask]="true" name="password" formControlName="password" strongRegex="^(?=.\d)(?=.[A-Z])(?=.[a-z])(?=.[^\w\d\s:])([^\s]){8,16}$">
+          <ng-template pTemplate="header">
+            <h6>Scegli una password</h6>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p class="mt-2">Suggerimenti</p>
+            <ul class="pl-2 ml-2 mt-0" style="line-height: 1">
+              <li>Almeno una minuscola</li>
+              <li>Almeno una maiuscola</li>
+              <li>Almeno un numero</li>
+              <li>Almeno un carattere speciale</li>
+              <li>8-16 caratteri</li>
+            </ul>
+          </ng-template>
+        </p-password>
+      </div>
+      <div class="input-group">
+        <label for="ripetiPassword">Ripeti password*</label>
+        <p-password [toggleMask]="true" [feedback]="false" name="ripetiPassword" formControlName="ripetiPassword"></p-password>
+      </div>
+      <div class="check">
+        <input class="form-check-input me-3" type="checkbox" name="terms" formControlName="terms"/>
+        <label class="form-check-label text-white" for="terms">
+          Dichiaro di accettare i <u>Terms and Conditions</u> del tuo sito.
+        </label>
+      </div>
+      <hr class="bordino-dettagli">
+      <button class="sign" type="submit">Registrati</button>
+    </form>
+  </div>
+</div>
+<p-toast position="bottom-right"></p-toast>
+

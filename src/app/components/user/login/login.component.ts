@@ -15,7 +15,7 @@ export class LoginComponent {
   loggingError: string;
   user: any;
 
-  form = new FormGroup ({
+  credenziali = new FormGroup ({
     username: new FormControl(''),
     password: new FormControl('')
   });
@@ -27,15 +27,15 @@ export class LoginComponent {
   ) {}
 
   onSubmit() {
-    const credentials = this.form.value;
-    if (credentials.username !== '' && credentials.password !== '') {
+    const credentials = this.credenziali.getRawValue();
+    if (credentials.username != '' && credentials.password != '') {
       this.authService.login(credentials.username, credentials.password).subscribe({
         next: (res) => {
           this.user = res;
           if(res) {
             this.messageService.add({severity: 'success', summary: 'Daje', detail: 'Hai fatto er login.', life: 5000});
             this.authService.saveStorage(res);
-            this.router.navigate(['home']);
+            setTimeout(() => this.router.navigate(['home']), 3000);
           } else {
             this.loggingError = 'Username o password errati.';
           }
